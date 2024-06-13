@@ -1,0 +1,12 @@
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.btnContainer button {
+  width: 45px;
+  height: 45px;
+  margin: 3px;
+}
