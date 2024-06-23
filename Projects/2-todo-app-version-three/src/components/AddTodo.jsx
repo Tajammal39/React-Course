@@ -1,47 +1,40 @@
-import { useState } from "react";
+import { useRef } from "react";
+import { BiMessageAdd } from "react-icons/bi";
 
 function AddTodo({ onNewItem }) {
-  const [todoName, setTodoName] = useState();
-  const [dueDate, setDueDate] = useState();
+  const todoNameElement = useRef();
+  const dueDateElement = useRef();
 
-  const handleNameChange = (event) => {
-    setTodoName(event.target.value);
-  };
-
-  const handleDateChange = (event) => {
-    setDueDate(event.target.value);
-  };
-
-  const handleClickButton = () => {
+  const handleClickButton = (event) => {
+    event.preventDefault();
+    const todoName = todoNameElement.current.value;
+    const dueDate = dueDateElement.current.value;
+    todoNameElement.current.value = "";
+    dueDateElement.current.value = "";
     onNewItem(todoName, dueDate);
-    setDueDate("");
-    setTodoName("");
   };
 
   return (
     <div className="container ">
-      <div className="row kg-row">
-        <div className="col-5">
-          <input
-            type="text"
-            placeholder="Enter Todo here"
-            onChange={handleNameChange}
-            value={todoName}
-          />
+      <form action="" onSubmit={handleClickButton}>
+        <div className="row kg-row">
+          <div className="col-5">
+            <input
+              type="text"
+              ref={todoNameElement}
+              placeholder="Enter Todo here"
+            />
+          </div>
+          <div className="col-4">
+            <input type="date" ref={dueDateElement} />
+          </div>
+          <div className="col-3">
+            <button type="submit" className="btn btn-success kg-button">
+              <BiMessageAdd />
+            </button>
+          </div>
         </div>
-        <div className="col-4">
-          <input type="date" onChange={handleDateChange} value={dueDate} />
-        </div>
-        <div className="col-3">
-          <button
-            type="button"
-            className="btn btn-success kg-button"
-            onClick={handleClickButton}
-          >
-            Add
-          </button>
-        </div>
-      </div>
+      </form>
     </div>
   );
 }
