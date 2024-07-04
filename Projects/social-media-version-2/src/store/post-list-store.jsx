@@ -29,7 +29,7 @@ export const PostListContext = createContext({
 });
 
 const PostListProvider = ({ children }) => {
-  const [postList, setPostList] = useState(DEFAULT_POST_LIST);
+  const [postList, setPostList] = useState([]);
 
   const addPost = (id, title, description, rating, tags) => {
     const newPost = {
