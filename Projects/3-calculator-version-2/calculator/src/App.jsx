@@ -26,7 +26,6 @@ function App() {
   let [calVal, setCalValue] = useState("");
 
   const onButtonClick = (buttonText) => {
-    calVal = "";
     if (buttonText === "C") {
       setCalValue("");
     } else if (buttonText === "=") {
