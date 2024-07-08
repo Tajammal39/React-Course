@@ -8,16 +8,17 @@ import Post from "./components/Post";
 import PostList from "./components/PostList";
 import { useState } from "react";
 import PostListProvider from "./store/post-list-store";
+import { Outlet } from "react-router-dom";
 
 function App() {
-  const [selectedTab, setSelectedTab] = useState("Home");
+  // const [selectedTab, setSelectedTab] = useState("Home");
   return (
     <PostListProvider>
       <div className="app-container">
-        <SideBar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+        <SideBar />
         <div className="content">
           <Header />
-          {selectedTab === "Home" ? <PostList /> : <CreatePost />}
+          <Outlet />
           <Footer />
         </div>
       </div>

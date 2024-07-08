@@ -1,8 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 
 export const PostListContext = createContext({
-  postList: [],
-  fetching: false,
   addPost: () => {},
   deletePost: () => {},
 });
@@ -28,18 +26,15 @@ const PostListProvider = ({ children }) => {
     setPostList(newPostList);
   };
 
-  useEffect(() => {
-    setFetching(true);
-    fetch("https://dummyjson.com/products", { signal })
-      .then((res) => res.json())
-      .then((data) => {
-        addInitialPost(data.products);
-        setFetching(false);
-      });
-    // return () => {
-    //   controller.abort();
-    // };
-  }, []);
+  // useEffect(() => {
+  //   setFetching(true);
+  //   fetch("https://dummyjson.com/products", { signal })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       addInitialPost(data.products);
+  //       setFetching(false);
+  //     });
+  // }, []);
 
   const deletePost = (postId) => {
     const newPostList = postList.filter((post) => post.id !== postId);
@@ -52,7 +47,7 @@ const PostListProvider = ({ children }) => {
   };
 
   return (
-    <PostListContext.Provider value={{ postList, addPost, deletePost }}>
+    <PostListContext.Provider value={{ addPost, deletePost }}>
       {children}
     </PostListContext.Provider>
   );
