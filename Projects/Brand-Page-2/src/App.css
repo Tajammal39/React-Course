@@ -1,42 +1,114 @@
-#root {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --red: #d01c28;
+  --gray: #2e2e2e;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  max-width: 1440px;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+}
+
+.brand_logo {
+  width: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul {
+  display: flex;
+  gap: 24px;
+}
+
+.navBtn {
+  all: unset;
+  padding: 6px 16px;
+  background-color: var(--red);
+  color: white;
+  font-weight: 500;
+  height: 32px;
+  width: 75px;
   text-align: center;
+  font-size: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* section part */
+
+.section {
+  display: flex;
+  justify-content: center;
+  margin-top: 66px;
+  align-items: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sectionText h1 {
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 80px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.sectionText {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 36px;
 }
 
-.card {
-  padding: 2em;
+.sectionText p {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray);
+  max-width: 400px;
 }
 
-.read-the-docs {
-  color: #888;
+#sectionBtn {
+  display: flex;
+  gap: 40px;
+}
+
+.btn1 {
+  font-size: 24px;
+  color: #ffffff;
+  background-color: var(--red);
+  padding: 6px 16px;
+  border: none;
+}
+
+.btn2 {
+  font-size: 24px;
+  border: 1px solid gray;
+  padding: 6px 16px;
+  background-color: transparent;
+  color: var(--gray);
+}
+
+.shopping p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.brandIcon {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 10px;
 }
