@@ -1,0 +1,17 @@
+.contactHeader {
+  margin: 0 auto;
+  width: 1020px;
+  /* margin-top: 70px; */
+}
+.contactHeader h1 {
+  font-weight: bold;
+  font-size: 48px;
+}
+
+.contactHeader p {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray);
+  width: 975px;
+  height: 72px;
+}
