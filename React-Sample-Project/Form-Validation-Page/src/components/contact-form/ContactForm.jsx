@@ -3,28 +3,21 @@ import Button from "../Button/Button";
 import { MdMessage } from "react-icons/md";
 import { MdLocalPhone } from "react-icons/md";
 import { MdOutlineMail } from "react-icons/md";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const ContactForm = () => {
-  let [name, setName] = useState("");
-  let [email, setEmail] = useState("");
-  let [text, setText] = useState("");
+  let nameElement = useRef();
+  let emailElement = useRef();
+  let textElement = useRef();
 
   const onSubmit = (event) => {
     event.preventDefault();
 
-    name = event.target[0].value;
-    email = event.target[1].value;
-    text = event.target[2].value;
+    const name = nameElement.current.value;
+    const email = emailElement.current.value;
+    const text = textElement.current.value;
 
-    setName(name);
-    setEmail(email);
-    setText(text);
     console.log(name, email, text);
-
-    console.log(event);
-
-    // console.log(event.target.value);
   };
 
   return (
@@ -46,17 +39,17 @@ const ContactForm = () => {
         <form onSubmit={onSubmit}>
           <div className={style.form_contact}>
             <label htmlFor="name">Label Name</label>
-            <input type="text" name="name" />
+            <input type="text" name="name" ref={nameElement} />
           </div>
 
           <div className={style.form_contact}>
             <label htmlFor="email">Email</label>
-            <input type="text" name="email" />
+            <input type="text" name="email" ref={emailElement} />
           </div>
 
           <div className={style.form_contact}>
             <label htmlFor="text">Text</label>
-            <textarea name="text" rows="8" />
+            <textarea name="text" rows="8" ref={textElement} />
           </div>
           <div style={{ display: "flex", justifyContent: "end" }}>
             <Button text="SUBMIT BUTTON" />
