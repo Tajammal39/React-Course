@@ -6,12 +6,20 @@ import { MdOutlineMail } from "react-icons/md";
 import { useState } from "react";
 
 const ContactForm = () => {
+  let [name, setName] = useState("");
+  let [email, setEmail] = useState("");
+  let [text, setText] = useState("");
+
   const onSubmit = (event) => {
     event.preventDefault();
 
-    let name = event.target[0].value;
-    let email = event.target[1].value;
-    let text = event.target[2].value;
+    name = event.target[0].value;
+    email = event.target[1].value;
+    text = event.target[2].value;
+
+    setName(name);
+    setEmail(email);
+    setText(text);
     console.log(name, email, text);
 
     console.log(event);
