@@ -1,0 +1,67 @@
+.select_no {
+  color: #ff0c0c;
+  font-size: 24px;
+  text-align: end;
+}
+
+.dice_roll_container {
+  width: 1280px;
+  margin: 0 auto;
+  height: 170vh;
+}
+
+.dice_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dice_score h1 {
+  font-size: 62px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.dice_score p {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.dice_number_btn p {
+  text-align: end;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.dice_number_btn div {
+  display: flex;
+  gap: 24px;
+}
+
+.dice_number_btn button {
+  height: 72px;
+  width: 72px;
+  font-weight: bold;
+  background-color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+.dice_img {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  margin-top: 48px;
+}
+
+.dice_img img {
+  max-width: 250px;
+  min-height: 250px;
+  cursor: pointer;
+}
+
+.dice_btn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
