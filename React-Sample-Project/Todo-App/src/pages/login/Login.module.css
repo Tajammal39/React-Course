@@ -43,6 +43,13 @@
   font-weight: 600;
   font-size: 18px;
   border-radius: 7px;
+  transition: 1s all;
+  cursor: pointer;
+}
+
+.loginContainer > form > button:hover {
+  background-color: rgb(102, 102, 194);
+  transition: 1s all;
 }
 
 .loginContainer > h1 > span {
