@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import style from "./Login.module.css";
-import { json, useNavigate } from "react-router-dom";
+import { json, useNavigate, useParams } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({ email: "", password: "" });
-  // const [password, setPassword] = useState("");
+
   const HandleForm = (e) => {
     e.preventDefault();
     const tempUser = localStorage.getItem("userDetails");
@@ -16,10 +16,12 @@ const Login = () => {
         loginUser.password === user.password
       ) {
         alert("Login Successfully match");
-        navigate("/my-list");
+        navigate(`/my-list/${user.email}`);
       } else alert("Worng info");
     } else {
       localStorage.setItem("userDetails", JSON.stringify(user));
+      alert("Successfully Register");
+      navigate(`/my-list/${user.email}`);
     }
   };
   return (

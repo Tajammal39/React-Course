@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./ListTodo.module.css";
+import { useParams } from "react-router-dom";
 const ListTodo = () => {
+  const { email } = useParams();
+  const [userEmail, setUserEmail] = useState();
+
+  useEffect(() => {
+    const tempUser = localStorage.getItem("userDetails");
+    if (tempUser) {
+      let loginUser = JSON.parse(tempUser);
+      setUserEmail(loginUser.email);
+    } else {
+      setUserEmail(".......");
+    }
+  }, []);
   return (
-    <div class={style.container}>
-      <h1>My Todo</h1>
+    <div className={style.container}>
+      <h1>My Todo({email})</h1>
       <form action="">
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           <label htmlFor="todo">Enter your todo</label>
