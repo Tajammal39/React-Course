@@ -1,0 +1,42 @@
+.food_container {
+  background-image: url("./bg.png");
+  height: 500px;
+  /* height: 780px; */
+  /* height: calc(100vh - 180px); */
+  max-width: 1440px;
+  display: flex;
+  gap: 20px;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* flex-direction: column; */
+}
+
+.food_card {
+  width: 340px;
+  height: 167px;
+  background: radial-gradient(circle at center, #000000 0%, #333333 100%);
+  /* Adjust the colors and percentages to match the image */
+  /* padding: 20px;*/
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  /* background-color: aqua; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  border: 1px solid rgb(220, 212, 228);
+  /* align-items: center; */
+  background-blend-mode: overlay, normal;
+  backdrop-filter: blur(13.84px);
+  /* flex-wrap: wrap; */
+}
+
+.food_info {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  align-items: end;
+  justify-content: center;
+  padding: 5px 0px 5px 10px;
+}
