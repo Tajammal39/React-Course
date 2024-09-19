@@ -1,0 +1,27 @@
+.navBarConatiner {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  justify-content: space-between;
+  padding: 20px 40px;
+
+  > img {
+    width: 30px;
+  }
+
+  > form {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border: 1px solid #ededed;
+    border-radius: 25px;
+    padding: 10px 20px;
+    > input {
+      outline: none;
+      border: 0px;
+      flex: 1;
+      width: 100%;
+      gap: 1em;
+    }
+  }
+}

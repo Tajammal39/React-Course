@@ -9,7 +9,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [filteredData, sentFilteredData] = useState(null);
-  const [selectedBtn, setSelectedBtn] = useState("all");
+  // const [selectedBtn, setSelectedBtn] = useState("all");
 
   useEffect(() => {
     const fetchFoodData = async () => {
@@ -34,7 +34,7 @@ const App = () => {
   const filterFood = (type) => {
     if (type.toLowerCase() == "all") {
       sentFilteredData(data);
-      setSelectedBtn(type.toLowerCase());
+      // setSelectedBtn(type.toLowerCase());
       return;
     }
 
@@ -42,7 +42,7 @@ const App = () => {
       food.type.toLowerCase().includes(type.toLowerCase())
     );
     sentFilteredData(filter);
-    setSelectedBtn(type);
+    // setSelectedBtn(type);
   };
 
   const searchBar = (e) => {
